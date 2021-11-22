@@ -53,11 +53,15 @@ const getGoods = () => {
         })
     });
 
-
-
-
     if (localStorage.getItem('goods')) {
         renderGoods(JSON.parse(localStorage.getItem('goods')));
+    }
+
+    if (btnMore) {
+        btnMore.addEventListener('click', (event) => {
+            event.preventDefault();
+            getData();
+        });
     }
 };
 
